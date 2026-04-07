@@ -52,7 +52,7 @@ export default function Navbar() {
                         <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all group-hover:w-full" />
                     </Link>
                     <Link
-                        href="/#pricing"
+                        href="/pricing"
                         className="text-sm font-semibold tracking-tight text-slate-500 hover:text-blue-700 transition-colors relative group"
                     >
                         PRICING

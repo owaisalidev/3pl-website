@@ -229,12 +229,12 @@ export default function Home() {
                         { title: "Order Fulfillment", desc: "Efficient picking, packing and shipping to customers across the UK and worldwide.", icon: Package },
                         { title: "Poly Bagging", desc: "Protect your products with custom poly bagging and compliant packing.", icon: Box },
                         { title: "Labeling & Barcode Services", desc: "Marketplace and carrier-compliant labeling, including FNSKU, ASIN, QR & barcodes.", icon: Tag },
-                        { title: "Hourly Labour Support", desc: "Flexible workforce for warehouse operations and special handling support.", icon: Users },
+                        // { title: "Hourly Labour Support", desc: "Flexible workforce for warehouse operations and special handling support.", icon: Users },
                         { title: "Cross Docking", desc: "Fast turnaround from inbound to outbound shipping with minimal storage dwell time.", icon: Ship },
                         { title: "Bundling & Kitting", desc: "Create multi-product bundles, promotional kits, and ready-to-sell packages.", icon: Boxes },
                         { title: "Storage & Warehousing", desc: "Secure storage with real-time inventory tracking and flexible storage terms.", icon: Factory },
-                        { title: "Container Unloading", desc: "Professional container handling, palletizing and inventory reception.", icon: ArrowRightLeft },
-                        { title: "Consulting Services", desc: "Supply chain optimisation, warehouse layout design and systems integration.", icon: BarChart3 }
+                        // { title: "Container Unloading", desc: "Professional container handling, palletizing and inventory reception.", icon: ArrowRightLeft },
+                        // { title: "Consulting Services", desc: "Supply chain optimisation, warehouse layout design and systems integration.", icon: BarChart3 }
                     ].map((service, idx) => (
                         <div key={idx} className="group relative">
                             <div className="flex gap-6">

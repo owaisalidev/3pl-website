@@ -57,16 +57,16 @@ export const servicesData: Service[] = [
         features: ["FNSKU & ASIN labeling", "Barcode generation & printing", "Carton & pallet labels", "Correction of labeling errors"],
         benefit: "Eliminate rejection risks at Amazon fulfillment centers and other marketplaces."
     },
-    {
-        id: "labour",
-        title: "Hourly Labour Support",
-        slug: "hourly-labour",
-        shortDesc: "Flexible workforce for warehouse operations and special handling support.",
-        longDesc: "Need extra hands for a special project? Our skilled warehouse team is available for hourly hire. From quality control inspections and intricate assembly to re-boxing and inventory audits, we provide the flexible labor you need without the overhead of hiring permanent staff.",
-        icon: Users,
-        features: ["Quality control inspections", "Product assembly", "Re-packaging & re-work", "Inventory audits"],
-        benefit: "Flexible, scalable labor on demand for ad-hoc logistical tasks."
-    },
+    // {
+    //     id: "labour",
+    //     title: "Hourly Labour Support",
+    //     slug: "hourly-labour",
+    //     shortDesc: "Flexible workforce for warehouse operations and special handling support.",
+    //     longDesc: "Need extra hands for a special project? Our skilled warehouse team is available for hourly hire. From quality control inspections and intricate assembly to re-boxing and inventory audits, we provide the flexible labor you need without the overhead of hiring permanent staff.",
+    //     icon: Users,
+    //     features: ["Quality control inspections", "Product assembly", "Re-packaging & re-work", "Inventory audits"],
+    //     benefit: "Flexible, scalable labor on demand for ad-hoc logistical tasks."
+    // },
     {
         id: "cross-docking",
         title: "Cross Docking",
@@ -97,24 +97,24 @@ export const servicesData: Service[] = [
         features: ["Secure, monitored facility", "Flexible pallet & shelf storage", "Real-time stock visibility", "Scalable space based on demand"],
         benefit: "Cost-effective, secure storage that scales with your inventory levels."
     },
-    {
-        id: "container",
-        title: "Container Unloading",
-        slug: "container-unloading",
-        shortDesc: "Professional container handling, palletizing and inventory reception.",
-        longDesc: "We expertly handle the arrival of your 20ft and 40ft containers. our team efficiently unloads, palletizes, wraps, and enters your stock into inventory. We ensure swift turnaround times so your goods are ready for sale as quickly as possible.",
-        icon: ArrowRightLeft,
-        features: ["20ft & 40ft container handling", "Palletizing & shrink wrapping", "Damage inspection", "Fast inventory intake"],
-        benefit: "Streamline your inbound logistics with professional container destuffing."
-    },
-    {
-        id: "consulting",
-        title: "Consulting Services",
-        slug: "consulting-services",
-        shortDesc: "Supply chain optimisation, warehouse layout design and systems integration.",
-        longDesc: "Leverage our decades of logistics expertise to optimize your supply chain. We offer consulting on inventory management, warehouse layout, systems integration, and shipping strategy to help you reduce costs and improve efficiency across your entire operation.",
-        icon: BarChart3,
-        features: ["Supply chain analysis", "Systems integration advice", "Shipping cost reduction", "Process optimization"],
-        benefit: "Expert guidance to transform your logistics into a competitive advantage."
-    }
+    // {
+    //     id: "container",
+    //     title: "Container Unloading",
+    //     slug: "container-unloading",
+    //     shortDesc: "Professional container handling, palletizing and inventory reception.",
+    //     longDesc: "We expertly handle the arrival of your 20ft and 40ft containers. our team efficiently unloads, palletizes, wraps, and enters your stock into inventory. We ensure swift turnaround times so your goods are ready for sale as quickly as possible.",
+    //     icon: ArrowRightLeft,
+    //     features: ["20ft & 40ft container handling", "Palletizing & shrink wrapping", "Damage inspection", "Fast inventory intake"],
+    //     benefit: "Streamline your inbound logistics with professional container destuffing."
+    // },
+    // {
+    //     id: "consulting",
+    //     title: "Consulting Services",
+    //     slug: "consulting-services",
+    //     shortDesc: "Supply chain optimisation, warehouse layout design and systems integration.",
+    //     longDesc: "Leverage our decades of logistics expertise to optimize your supply chain. We offer consulting on inventory management, warehouse layout, systems integration, and shipping strategy to help you reduce costs and improve efficiency across your entire operation.",
+    //     icon: BarChart3,
+    //     features: ["Supply chain analysis", "Systems integration advice", "Shipping cost reduction", "Process optimization"],
+    //     benefit: "Expert guidance to transform your logistics into a competitive advantage."
+    // }
 ];
