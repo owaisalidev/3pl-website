@@ -260,14 +260,17 @@ export default function Home() {
                             <span className="text-[11px] font-bold tracking-[0.2em] text-blue-700 uppercase">EXPERIENCED FBA PARTNER</span>
                         </div>
                         <h2 className="section-title uppercase">
-                            End-to-End <br /> <span className="text-blue-700">Amazon FBA Prep & Fulfilment.</span>
+                            End-to-End <br />
+                            {/* <span className="text-blue-700">Amazon FBA Prep & Fulfilment.</span> */}
                         </h2>
 
                         <div className="space-y-6">
                             {[
-                                { title: "FBA Prep & Labeling", desc: "Precise FNSKU application and compliant carton labeling." },
-                                { title: "Seller Fulfilled Prime", desc: "Meet the highest delivery standards with our SFP capabilities." },
-                                { title: "Hazardous Materials", desc: "Certified handling for specialized product categories." }
+                                { title: "Amazon", desc: "Amazon FBA, FBM , Asim and FNSKU" },
+                                { title: "TikTok Shop", desc: "Tiktok Shop Order fullfilment services" },
+                                { title: "Shopify", desc: "Shopify order fulfillment services" },
+                                { title: "Etsy", desc: "Etsy order fulfillement services" },
+                                { title: "Onbuy", desc: "Onbuy order fulfillment services" },
                             ].map((item, idx) => (
                                 <div key={idx} className="flex gap-6 p-6 bg-slate-50 border border-slate-200 sharp-edge group hover:border-orange-500/30 transition-all">
                                     <div className="w-10 h-10 bg-white flex items-center justify-center border border-slate-200 sharp-edge text-orange-500 font-bold group-hover:bg-orange-500 group-hover:text-white transition-all shadow-sm">
@@ -296,6 +299,7 @@ export default function Home() {
                                         From Shopify integration to TikTok Shop viral surges, our infrastructure is built to scale with your sales volume.
                                     </p>
                                 </div>
+
                                 <div className="grid grid-cols-2 gap-6">
                                     <div className="p-6 bg-white border border-slate-200 sharp-edge shadow-sm">
                                         <div className="text-2xl font-bold text-slate-900 mb-1">99.9%</div>
@@ -309,22 +313,7 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="space-y-4 mb-12">
-                            {[
-                                "Over a decade of Amazon FBA experience",
-                                "ASIN & FNSKU sticker placement",
-                                "FBA pallet labelling & shipment creation",
-                                "Pick, pack and dispatch fulfilment",
-                                "Long-term warehousing for bulk inventory"
-                            ].map((point, i) => (
-                                <div key={i} className="flex items-center gap-4 text-slate-600 font-medium">
-                                    <Check className="w-5 h-5 text-blue-700" />
-                                    <span>{point}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+
                 </div>
             </SectionWrapper>
 
