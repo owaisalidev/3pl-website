@@ -45,6 +45,13 @@ export default function Navbar() {
                 {/* Desktop Menu */}
                 <div className="hidden lg:flex items-center gap-12">
                     <Link
+                        href="/"
+                        className="text-sm font-semibold tracking-tight text-slate-500 hover:text-blue-700 transition-colors relative group"
+                    >
+                        HOME
+                        <span className="absolute -bottom-1 left-0 w-0 h-px bg-orange-500 transition-all group-hover:w-full" />
+                    </Link>
+                    <Link
                         href="/services"
                         className="text-sm font-semibold tracking-tight text-slate-500 hover:text-blue-700 transition-colors relative group"
                     >

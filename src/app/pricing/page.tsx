@@ -50,12 +50,17 @@ export default function PricingPage() {
                         <table className="w-full border-separate border-spacing-0 border border-slate-900 min-w-[900px]">
                             <thead>
                                 <tr className="bg-orange-500 text-slate-900">
-                                    <th className="border border-slate-900 py-6 px-4 text-sm font-black uppercase tracking-wider w-[100px] min-w-[100px] bg-orange-500">Category</th>
-                                    <th className="border border-slate-900 py-6 px-4 text-sm font-black uppercase tracking-wider w-[220px] min-w-[220px] sticky left-0 z-30 bg-orange-500">Service</th>
+                                    <th className="border border-slate-900 py-6 px-4 text-sm font-black uppercase tracking-wider w-[220px] min-w-[220px] sticky left-0 z-30 bg-orange-500 border-r-2 shadow-[1px_0_0_0_#0f172a]">Service</th>
                                     {pricingTiers.map((tier, idx) => (
-                                        <th key={idx} className="border border-slate-900 py-6 px-4 text-center min-w-[150px]">
-                                            <div className="text-sm font-black uppercase tracking-wider leading-tight">{tier.name}:</div>
-                                            <div className="text-[10px] font-bold opacity-80 mt-1 uppercase tracking-tighter">{tier.range}</div>
+                                        <th key={idx} className="border border-slate-900 py-6 px-4 text-center min-w-[150px] relative group/header">
+                                            <div className="text-sm font-black uppercase tracking-wider leading-tight">{tier.name}</div>
+                                            <div className="text-[10px] font-bold opacity-80 mt-1 uppercase tracking-tighter whitespace-nowrap">{tier.range}</div>
+                                            {tier.savings && (
+                                                <div className="mt-3 inline-flex items-center gap-1.5 bg-slate-900 text-white text-[10px] font-black px-3 py-1.5 sharp-edge tracking-tight shadow-[3px_3px_0px_0px_#f97316] relative transition-transform group-hover/header:-translate-y-0.5">
+                                                    <span className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></span>
+                                                    {tier.savings}
+                                                </div>
+                                            )}
                                         </th>
                                     ))}
                                 </tr>
@@ -64,20 +69,14 @@ export default function PricingPage() {
                                 {pricingData.map((cat, catIdx) => (
                                     cat.services.map((row, rowIdx) => (
                                         <tr key={`${catIdx}-${rowIdx}`} className="bg-white hover:bg-slate-50/50 transition-colors group/row">
-                                            {rowIdx === 0 && (
-                                                <td
-                                                    rowSpan={cat.services.length}
-                                                    className="border border-slate-900 py-6 px-4 text-center font-black uppercase tracking-tight text-slate-900 bg-white align-middle"
-                                                >
-                                                    <div className="text-[10px]">{cat.category}</div>
-                                                </td>
-                                            )}
-                                            <td className="border border-slate-900 py-4 px-6 font-bold text-slate-900 uppercase tracking-tight text-sm sticky left-0 z-20 bg-white group-hover/row:bg-slate-50 transition-colors shadow-[1px_0_0_0_#0f172a]">
+                                            <td className="border border-slate-900 py-4 px-6 font-bold text-slate-900 uppercase tracking-tight text-sm sticky left-0 z-20 bg-white group-hover/row:bg-slate-50 transition-colors shadow-[2px_0_0_0_#0f172a]">
                                                 {row.service}
                                             </td>
                                             {row.prices.map((price, priceIdx) => (
                                                 <td key={priceIdx} className="border border-slate-900 py-4 px-6 text-center font-medium text-slate-700 text-sm">
-                                                    {price}
+                                                    <span className={priceIdx === row.prices.length - 1 ? "font-black text-slate-900" : ""}>
+                                                        {price}
+                                                    </span>
                                                 </td>
                                             ))}
                                         </tr>

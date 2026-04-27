@@ -14,6 +14,7 @@ import {
     ExternalLink,
     Factory,
     Globe,
+    Info,
     LayoutDashboard,
     Package,
     Phone,
@@ -27,6 +28,7 @@ import {
     Users,
     Zap
 } from "lucide-react";
+import { pricingTiers, pricingData } from "@/lib/pricing-data";
 
 export default function Home() {
     return (
@@ -326,235 +328,62 @@ export default function Home() {
                         </h2>
                     </div>
                     <p className="section-subtitle mb-2">
-                        Clear pricing you can trust — no hidden fees.
+                        Transparent volume-based pricing that grows with your brand.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                    {/* TABLE 1: 2-STEP DROP SHIPPING */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-slate-900 flex items-center gap-3">
-                            <Ship className="w-4 h-4 text-orange-400" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">2-Step Drop Shipping</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Box Size</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "6×4×4", p: "£0.84" },
-                                    { s: "9×4×4", p: "£0.94" },
-                                    { s: "10×7×4", p: "£1.24" },
-                                    { s: "12×12×15", p: "£2.40" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                {/* New Premium Pricing Preview */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                    {/* Main Tier Highlights */}
+                    <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-5 gap-4">
+                        {pricingTiers.map((tier, idx) => (
+                            <div key={idx} className="bg-white border border-slate-200 p-6 sharp-edge group hover:border-orange-500 transition-all shadow-sm flex flex-col items-center text-center">
+                                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">{tier.name}</div>
+                                <div className="text-xs font-bold text-slate-900 leading-tight mb-4 h-8 flex items-center">{tier.range}</div>
+                                {tier.savings ? (
+                                    <div className="mt-auto bg-slate-900 text-white text-[9px] font-black px-2 py-1 sharp-edge uppercase tracking-tighter">
+                                        {tier.savings}
+                                    </div>
+                                ) : (
+                                    <div className="mt-auto text-[9px] font-black text-slate-300 uppercase tracking-tighter">STANDARD</div>
+                                )}
+                            </div>
+                        ))}
                     </div>
 
-                    {/* TABLE 2: PROCESSING CHARGES */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-blue-700 flex items-center gap-3">
-                            <RefreshCw className="w-4 h-4 text-white" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Processing Charges</h3>
+                    {/* Quick CTA Card */}
+                    <div className="lg:col-span-4">
+                        <div className="bg-slate-900 sharp-edge p-8 h-full flex flex-col justify-center relative overflow-hidden group">
+                           <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-3xl"></div>
+                           <h3 className="text-xl font-bold text-white uppercase tracking-tight mb-4 relative z-10">Flexible Fulfillment</h3>
+                           <p className="text-slate-400 text-sm mb-8 relative z-10 font-medium">We handle everything from single unit picks to complex kitting at scale. No hidden fees.</p>
+                           <Link href="/pricing" className="btn-primary py-4 px-6 text-center text-[10px] group/btn bg-orange-500 hover:bg-orange-600 border-none transition-all">
+                                VIEW FULL PRICE LIST <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform inline" />
+                           </Link>
                         </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Orders / Month</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "0–1000", p: "£4.00" },
-                                    { s: "1000+", p: "£3.00" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
                     </div>
+                </div>
 
-                    {/* TABLE 3: BOX CHARGES */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-orange-500 flex items-center gap-3">
-                            <Box className="w-4 h-4 text-white" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Box Charges</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Units/ASIN</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "1–20", p: "£0.40" },
-                                    { s: "21–100", p: "£0.55" },
-                                    { s: "101–200", p: "£0.65" },
-                                    { s: "201–500", p: "£0.70" },
-                                    { s: "501–999", p: "£0.75" },
-                                    { s: "1000+", p: "£0.80" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* TABLE 4: LABELING SERVICES */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-slate-800 flex items-center gap-3">
-                            <Tag className="w-4 h-4 text-orange-400" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Labeling Services</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Service</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "Label Set (1)", p: "£0.80" },
-                                    { s: "Label Set (2)", p: "£1.00" },
-                                    { s: "Polybagging (1 unit)", p: "£2.25" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* TABLE 5: CROSS DOCKING */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-blue-600 flex items-center gap-3">
-                            <ArrowRightLeft className="w-4 h-4 text-white" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Cross Docking & Pick Pack</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Service</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "Cross Dock (box)", p: "£40.00" },
-                                    { s: "Pick/Pack (box)", p: "£40.00" },
-                                    { s: "Cross Dock (pallet)", p: "£4.00" },
-                                    { s: "Pick/Pack (pallet)", p: "£4.00" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* TABLE 6: STORAGE SERVICES */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-slate-700 flex items-center gap-3">
-                            <Factory className="w-4 h-4 text-orange-400" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Storage Services</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Type</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "1 Pallet / Month", p: "£65.00" },
-                                    { s: "Half Pallet", p: "£40.00" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* TABLE 7: CONTAINER UNLOADING */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-orange-600 flex items-center gap-3">
-                            <Ship className="w-4 h-4 text-white" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Container Unloading</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Container</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Rate</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "20ft Container", p: "£350.00" },
-                                    { s: "40ft Container", p: "£500.00" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-
-                    {/* TABLE 8: LABOUR & FBM */}
-                    <div className="card-premium p-0 bg-white shadow-sm overflow-hidden">
-                        <div className="px-6 py-4 bg-blue-800 flex items-center gap-3">
-                            <Users className="w-4 h-4 text-white" />
-                            <h3 className="text-xs font-bold uppercase tracking-widest text-white">Labour & FBM Services</h3>
-                        </div>
-                        <table className="w-full text-xs">
-                            <thead className="bg-slate-50 border-b border-slate-200">
-                                <tr>
-                                    <th className="px-6 py-3 text-left font-bold text-slate-400 uppercase tracking-tighter">Service</th>
-                                    <th className="px-6 py-3 text-right font-bold text-slate-400 uppercase tracking-tighter">Price</th>
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-slate-100">
-                                {[
-                                    { s: "Warehouse Labour", p: "£35 / hr" },
-                                    { s: "FBM Charges (Up to 8x8x8)", p: "£4.99" }
-                                ].map((r, i) => (
-                                    <tr key={i} className="hover:bg-slate-50/50">
-                                        <td className="px-6 py-3 font-medium text-slate-600">{r.s}</td>
-                                        <td className="px-6 py-3 text-right font-bold text-slate-900">{r.p}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
+                {/* Popular Services Snippets */}
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                     {[
+                         { title: "FNSKU Labeling", price: "£0.21", unit: "/unit", icon: Tag, color: "orange" },
+                         { title: "Standard Prep", price: "£0.84", unit: "/unit", icon: Package, color: "blue" },
+                         { title: "Monthly Storage", price: "£10.00", unit: "/m³", icon: Factory, color: "slate" }
+                     ].map((item, idx) => (
+                         <div key={idx} className="flex items-center gap-6 p-8 bg-white border border-slate-200 sharp-edge shadow-sm hover:shadow-md transition-all group">
+                             <div className="w-14 h-14 bg-slate-50 flex items-center justify-center sharp-edge group-hover:bg-slate-900 transition-colors">
+                                 <item.icon className="w-6 h-6 text-slate-900 group-hover:text-white" />
+                             </div>
+                             <div>
+                                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{item.title}</div>
+                                 <div className="flex items-baseline gap-1">
+                                    <span className="text-2xl font-black text-slate-900">{item.price}</span>
+                                    <span className="text-[10px] font-bold text-slate-400">{item.unit}*</span>
+                                 </div>
+                             </div>
+                         </div>
+                     ))}
                 </div>
 
                 <div className="mt-12 p-8 border border-slate-200 sharp-edge bg-white flex flex-col md:flex-row justify-between items-center gap-8">
@@ -565,7 +394,12 @@ export default function Home() {
                             <div className="text-lg font-bold text-slate-900">Monday – Saturday: 9:00 AM – 5:00 PM</div>
                         </div>
                     </div>
-                    <a href="#contact" className="btn-primary">GET A CUSTOM QUOTE</a>
+                    <div className="flex flex-col md:flex-row items-center gap-6">
+                         <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-tight italic">
+                             <Info className="w-3 h-3" /> *Price based on Tier 5 volume. All prices exclude VAT.
+                         </div>
+                         <a href="#contact" className="btn-primary py-4 px-10">GET A CUSTOM QUOTE</a>
+                    </div>
                 </div>
             </SectionWrapper>
 
