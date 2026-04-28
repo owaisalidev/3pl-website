@@ -15,6 +15,7 @@ interface SectionWrapperProps {
     withGrid?: boolean;
     innerClassName?: string;
     style?: React.CSSProperties;
+    overlay?: React.ReactNode;
 }
 
 export default function SectionWrapper({
@@ -24,6 +25,7 @@ export default function SectionWrapper({
     withGrid = false,
     innerClassName,
     style,
+    overlay,
 }: SectionWrapperProps) {
     return (
         <section
@@ -35,6 +37,7 @@ export default function SectionWrapper({
             )}
             style={style}
         >
+            {overlay}
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

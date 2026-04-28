@@ -37,60 +37,31 @@ export default function Home() {
 
             {/* 1️⃣ ENTERPRISE HERO SECTION */}
             <SectionWrapper
-                className="pt-32 pb-20 border-none relative bg-cover bg-center overflow-hidden min-h-[90vh] flex items-center"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000')" }}
+                className="py-0 border-none relative bg-cover bg-center overflow-hidden min-h-screen flex items-center"
+                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=2000')" }}
+                overlay={<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent z-0"></div>}
                 innerClassName="relative z-10 w-full"
             >
-                {/* Clean Stage Background Overlay */}
-                <div className="absolute inset-0 bg-slate-900/10 z-0"></div>
-
                 <div className="relative z-10 max-w-7xl mx-auto w-full">
-                    {/* The "Boxed" Container */}
-                    <div className="bg-white/98 backdrop-blur-3xl p-10 md:p-16 lg:p-24 shadow-[0_100px_150px_-30px_rgba(0,0,0,0.2)] border border-white/40 sharp-edge flex flex-col lg:flex-row items-stretch gap-16 lg:gap-24 relative overflow-hidden">
-                        {/* Material Accent */}
-                        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-orange-400 to-transparent opacity-50"></div>
+                    <div className="max-w-4xl">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white uppercase mb-8">
+                            STREAMLINE YOUR UK <br />
+                            <span className="text-white">PREP & FULFILMENT
+                            </span> <br />
+                            <span className="text-orange-500">WITH 3PL SOLUTION UK</span>
+                        </h1>
 
-                        {/* Main Content Area */}
-                        <div className="lg:w-[65%] flex flex-col justify-center">
-                            <div className="inline-flex items-center gap-3 px-4 py-2 bg-orange-500/10 border border-orange-500/20 sharp-edge mb-10 w-fit">
-                                <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
-                                <span className="text-[11px] font-bold tracking-[0.2em] text-orange-600 uppercase">PREMIUM UK FULFILLMENT HUB</span>
-                            </div>
+                        <p className="text-lg md:text-xl text-white/90 max-w-2xl font-medium leading-relaxed">
+                            Reliable prep services for eCommerce sellers — from inspection and labeling to picking, packing, and fast courier handovers.
+                        </p>
 
-                            <h1 className="text-4xl md:text-5xl xl:text-6xl font-black tracking-tighter leading-[0.95] text-slate-900 uppercase">
-                                STREAMLINE YOUR <br />
-                                <span className="text-slate-900">UK FULFILLMENT & LOGISTICS</span> <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">WITH 3PL SOLUTION UK</span>
-                            </h1>
-
-                            <p className="mt-8 text-lg md:text-xl text-slate-700 max-w-2xl font-semibold leading-relaxed">
-                                Expert 3PL services designed to help eCommerce brands scale, reduce costs, and deliver exceptional customer experiences.
-                            </p>
-
-                            <div className="mt-12 flex flex-wrap gap-6">
-                                <a href="#contact" className="btn-primary py-4 px-10 text-center">
-                                    GET A FREE QUOTE <ArrowRight className="w-5 h-5 ml-2" />
-                                </a>
-                                <a href="#contact" className="btn-secondary py-4 px-10 text-center">
-                                    SPEAK WITH A LOGISTICS SPECIALIST
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* Integrated Info Card */}
-                        <div className="lg:w-[30%] flex items-center">
-                            <div className="w-full card-premium bg-slate-50/50 border-slate-200/50 p-10 group relative transition-all duration-700 hover:bg-white hover:shadow-2xl">
-                                <div className="absolute top-0 right-0 w-24 h-24 bg-orange-500/5 blur-3xl rounded-full"></div>
-                                <div className="w-14 h-14 bg-orange-500/10 flex items-center justify-center sharp-edge mb-8">
-                                    <Factory className="w-7 h-7 text-orange-500" />
-                                </div>
-                                <h3 className="text-xl font-bold mb-4 uppercase tracking-tight text-slate-900">UK Operations</h3>
-                                <p className="text-sm text-slate-600 mb-8 leading-relaxed font-medium">Direct warehousing and distribution for global eCommerce brands.</p>
-                                <div className="h-px w-full bg-slate-200/60 mb-8"></div>
-                                <div className="flex items-center gap-3 text-xs font-bold tracking-widest text-blue-700">
-                                    <ShieldCheck className="w-5 h-5" /> 100% COMPLIANCE
-                                </div>
-                            </div>
+                        <div className="mt-12 flex flex-wrap gap-6">
+                            <a href="#contact" className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 md:py-5 px-10 md:px-12 rounded-full transition-all shadow-xl shadow-orange-600/20 text-sm md:text-base uppercase tracking-tight text-center">
+                                GET A FREE QUOTE
+                            </a>
+                            <a href="#contact" className="border-2 border-white/40 hover:border-white text-white font-bold py-4 md:py-5 px-10 md:px-12 rounded-full transition-all backdrop-blur-sm text-sm md:text-base uppercase tracking-tight text-center">
+                                SPEAK WITH SPECIALIST
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -100,10 +71,10 @@ export default function Home() {
             <div className="py-16 bg-slate-50 border-y border-slate-200/50">
                 <div className="max-w-7xl mx-auto px-6 mb-10 text-center lg:text-left">
                     <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-2">
-                        Trusted by Leading E-commerce Platforms
+                        Powering PREP &Fulfillment for E-commerce Brands
                     </h2>
                     <p className="text-slate-600 font-medium">
-                        We integrate seamlessly with all major marketplaces and eCommerce platforms to simplify your fulfilment operations.
+                        Whether you sell on Shopify, Amazon, or beyond — we handle your storage, packing and delivery with ease in UK.
                     </p>
                 </div>
                 <div className="w-full flex overflow-hidden group">
@@ -139,11 +110,11 @@ export default function Home() {
                     {[
                         {
                             title: "Ecommerce Fulfillment",
-                            desc: "We connect directly with your online store, manage inventory, orders, picking, packing and shipping — freeing you up to grow your sales.",
+                            desc: "We manage your inventory and orders, handle picking and packing and ensure smooth handover to courier partners so you can focus on growing your business.",
                             icon: Zap
                         },
                         {
-                            title: "Retail (B2B)",
+                            title: "Two Step Dropshipping",
                             desc: "With EDI connections and multi-channel support, we manage single units, cases, pallets and LTL freight for your retail partners.",
                             icon: Factory
                         },
@@ -173,10 +144,10 @@ export default function Home() {
             <SectionWrapper id="challenges" className="bg-slate-50">
                 <div className="max-w-4xl mb-24">
                     <h2 className="section-title uppercase">
-                        Struggling with Your <br /> <span className="text-orange-500">Current Fulfillment Provider?</span>
+                        Struggling with Your <br /> <span className="text-orange-500">Current Prep Service Provider?</span>
                     </h2>
                     <p className="section-subtitle">
-                        Operational bottlenecks are costing you more than just time. They are eroding your brand and eating your margins.
+                        Delays, inconsistent prep quality and poor handling can lead to rejected inventory, lost sales and damaged customer trust.
                     </p>
                 </div>
 
@@ -354,36 +325,36 @@ export default function Home() {
                     {/* Quick CTA Card */}
                     <div className="lg:col-span-4">
                         <div className="bg-slate-900 sharp-edge p-8 h-full flex flex-col justify-center relative overflow-hidden group">
-                           <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-3xl"></div>
-                           <h3 className="text-xl font-bold text-white uppercase tracking-tight mb-4 relative z-10">Flexible Fulfillment</h3>
-                           <p className="text-slate-400 text-sm mb-8 relative z-10 font-medium">We handle everything from single unit picks to complex kitting at scale. No hidden fees.</p>
-                           <Link href="/pricing" className="btn-primary py-4 px-6 text-center text-[10px] group/btn bg-orange-500 hover:bg-orange-600 border-none transition-all">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 blur-3xl"></div>
+                            <h3 className="text-xl font-bold text-white uppercase tracking-tight mb-4 relative z-10">Flexible Fulfillment</h3>
+                            <p className="text-slate-400 text-sm mb-8 relative z-10 font-medium">We handle everything from single unit picks to complex kitting at scale. No hidden fees.</p>
+                            <Link href="/pricing" className="btn-primary py-4 px-6 text-center text-[10px] group/btn bg-orange-500 hover:bg-orange-600 border-none transition-all">
                                 VIEW FULL PRICE LIST <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform inline" />
-                           </Link>
+                            </Link>
                         </div>
                     </div>
                 </div>
 
                 {/* Popular Services Snippets */}
                 <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                     {[
-                         { title: "FNSKU Labeling", price: "£0.21", unit: "/unit", icon: Tag, color: "orange" },
-                         { title: "Standard Prep", price: "£0.84", unit: "/unit", icon: Package, color: "blue" },
-                         { title: "Monthly Storage", price: "£10.00", unit: "/m³", icon: Factory, color: "slate" }
-                     ].map((item, idx) => (
-                         <div key={idx} className="flex items-center gap-6 p-8 bg-white border border-slate-200 sharp-edge shadow-sm hover:shadow-md transition-all group">
-                             <div className="w-14 h-14 bg-slate-50 flex items-center justify-center sharp-edge group-hover:bg-slate-900 transition-colors">
-                                 <item.icon className="w-6 h-6 text-slate-900 group-hover:text-white" />
-                             </div>
-                             <div>
-                                 <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{item.title}</div>
-                                 <div className="flex items-baseline gap-1">
+                    {[
+                        { title: "FNSKU Labeling", price: "£0.21", unit: "/unit", icon: Tag, color: "orange" },
+                        { title: "Standard Prep", price: "£0.84", unit: "/unit", icon: Package, color: "blue" },
+                        { title: "Monthly Storage", price: "£10.00", unit: "/m³", icon: Factory, color: "slate" }
+                    ].map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-6 p-8 bg-white border border-slate-200 sharp-edge shadow-sm hover:shadow-md transition-all group">
+                            <div className="w-14 h-14 bg-slate-50 flex items-center justify-center sharp-edge group-hover:bg-slate-900 transition-colors">
+                                <item.icon className="w-6 h-6 text-slate-900 group-hover:text-white" />
+                            </div>
+                            <div>
+                                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">{item.title}</div>
+                                <div className="flex items-baseline gap-1">
                                     <span className="text-2xl font-black text-slate-900">{item.price}</span>
                                     <span className="text-[10px] font-bold text-slate-400">{item.unit}*</span>
-                                 </div>
-                             </div>
-                         </div>
-                     ))}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
                 </div>
 
                 <div className="mt-12 p-8 border border-slate-200 sharp-edge bg-white flex flex-col md:flex-row justify-between items-center gap-8">
@@ -395,10 +366,10 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row items-center gap-6">
-                         <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-tight italic">
-                             <Info className="w-3 h-3" /> *Price based on Tier 5 volume. All prices exclude VAT.
-                         </div>
-                         <a href="#contact" className="btn-primary py-4 px-10">GET A CUSTOM QUOTE</a>
+                        <div className="flex items-center gap-2 text-[10px] font-bold text-slate-400 uppercase tracking-tight italic">
+                            <Info className="w-3 h-3" /> *Price based on Tier 5 volume. All prices exclude VAT.
+                        </div>
+                        <a href="#contact" className="btn-primary py-4 px-10">GET A CUSTOM QUOTE</a>
                     </div>
                 </div>
             </SectionWrapper>
